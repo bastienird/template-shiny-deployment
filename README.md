@@ -5,3 +5,18 @@ This repository provides a [Helm chart](https://helm.sh/) aimed at easily deploy
 A [tutorial](https://github.com/InseeFrLab/sspcloud-tutorials/blob/main/deployment/shiny-app.md) describes (in French) the complete deployment procedure.
 
 The example R Shiny App is deployed [here](https://myshinyapp.lab.sspcloud.fr).
+
+    from ebginning :
+    forker repo=,t
+    changer choses dans values.yml ex dashboardcwpdataset2.lab.sspcloud.fr
+    pas toucher chart
+    helm dependency update chemin_du_depot_chart ( helm dependency update ../template-shiny-deployment/)
+    helm install chemin_du_depot_chart --generate-name ( helm install  ../template-shiny-deployment --generate-name)
+    kubectl get pods
+    
+    pour savoir ce qui se passe apèr template-shiny-deployment-1765959698
+    
+    kubectl -n user-bastiengrassetird get ingress -o wide | grep template-shiny-deployment-1765959698
+kubectl -n user-bastiengrassetird describe ingress template-shiny-deployment-1765959698
+
+enlver des choses helm uninstall template-shiny-deployment-1765960339 -n user-bastiengrassetird
