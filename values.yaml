@@ -6,7 +6,7 @@ shiny:
     
   ingress:
     enabled: true
-    hostname: tunaatlas_pie_map_shinyfsdata.lab.sspcloud.fr
+    hostname: tunaatlaspiemapshinyfsdata.lab.sspcloud.fr
 
   resources:
     requests:
