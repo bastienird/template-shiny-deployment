@@ -1,12 +1,12 @@
 shiny:
   image:
-    repository: ghcr.io/firms-gta/dashboardcwpdatasetpreloadeddata
-    tag: "latest"
+    repository: ghcr.io/bastienird/tunaatlas_pie_map_shiny-fsdata-preloaded
+    tag: "14e5b85a161793c05172b0566df3e3cdbabff36a"
     pullPolicy: Always
     
   ingress:
     enabled: true
-    hostname: dashboardcwpdataset.lab.sspcloud.fr
+    hostname: tunaatlas_pie_map_shinyfsdata.lab.sspcloud.fr
 
   resources:
     requests:
