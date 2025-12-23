@@ -20,3 +20,26 @@ The example R Shiny App is deployed [here](https://myshinyapp.lab.sspcloud.fr).
 kubectl -n user-bastiengrassetird describe ingress template-shiny-deployment-1765959698
 
 enlver des choses helm uninstall template-shiny-deployment-1765960339 -n user-bastiengrassetird
+
+Edito 
+
+
+helm repo add inseefrlab https://inseefrlab.github.io/helm-charts-interactive-services
+helm repo update
+helm dependency build .
+
+
+helm upgrade --install my-shiny . -n user-bastiengrassetird -f values.yaml
+
+
+helm upgrade --install my-shiny . -n user-bastiengrassetird \
+  --set service.image.version=ghcr.io/firms-gta/dashboardcwpdatasetpreloadeddata:latest \
+  --set networking.service.port=3838 \
+  --set ingress.enabled=true \
+  --set ingress.tls=true \
+  --set ingress.hostname=dashboard.lab.dive.edito.eu \
+  --set-string resources.requests.cpu=200m \
+  --set-string resources.requests.memory=1Gi \
+  --set-string resources.limits.cpu=1 \
+  --set-string resources.limits.memory=2Gi
+
