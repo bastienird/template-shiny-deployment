@@ -13,7 +13,7 @@ The example R Shiny App is deployed [here](https://myshinyapp.lab.sspcloud.fr).
     helm dependency update chemin_du_depot_chart ( helm dependency update ../template-shiny-deployment/)
     helm install chemin_du_depot_chart --generate-name ( helm install  ../template-shiny-deployment --generate-name)
     kubectl get pods
-    
+    kubectl describe pod xxxx
     pour savoir ce qui se passe apèr template-shiny-deployment-1765959698
     
     kubectl -n user-bastiengrassetird get ingress -o wide | grep template-shiny-deployment-1765959698
