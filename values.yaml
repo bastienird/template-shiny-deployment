@@ -1,20 +1,20 @@
 shiny:
   image:
-    repository: ghcr.io/firms-gta/dashboardcwpdatasetpreloadeddata
+    repository: ghcr.io/bastienird/tdr-profile-analysier
     tag: "latest"
     pullPolicy: Always
     
   ingress:
     enabled: true
-    hostname: dashboardcwpdataset.lab.sspcloud.fr
+    hostname: tdrprofileanalyser.lab.sspcloud.fr
 
   resources:
     requests:
-      cpu: "500m"
-      memory: "2Gi"
+      cpu: "100m"
+      memory: "1Gi"
     limits:
-      cpu: "2"
-      memory: "4Gi"
+      cpu: "1"
+      memory: "1Gi"
 
   startupProbe:
     httpGet:
