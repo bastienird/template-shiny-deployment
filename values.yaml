@@ -1,12 +1,12 @@
 shiny:
   image:
-    repository: ghcr.io/firms-gta/dashboardcwpdatasetpreloadeddata
-    tag: "latest"
+    repository: "ghcr.io/bastienird/tunaatlas_pie_map_shiny"
+    tag: "effort2026"
     pullPolicy: Always
     
   ingress:
     enabled: true
-    hostname: dashboardcwpdataset.lab.sspcloud.fr
+    hostname: tunaatlaspiemapshinyeffort2k26.lab.sspcloud.fr
 
   resources:
     requests:
@@ -20,10 +20,10 @@ shiny:
     httpGet:
       path: /
       port: http
-    initialDelaySeconds: 10
+    initialDelaySeconds: 30
     periodSeconds: 10
     timeoutSeconds: 3
-    failureThreshold: 30
+    failureThreshold: 60
 
   readinessProbe:
     httpGet:

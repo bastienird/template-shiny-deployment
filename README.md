@@ -11,7 +11,7 @@ The example R Shiny App is deployed [here](https://myshinyapp.lab.sspcloud.fr).
     changer choses dans values.yml ex dashboardcwpdataset2.lab.sspcloud.fr
     pas toucher chart
     helm dependency update chemin_du_depot_chart ( helm dependency update ../template-shiny-deployment/)
-    helm install chemin_du_depot_chart --generate-name ( helm install  ../template-shiny-deployment --generate-name)
+    helm install chemin_du_depot_chart --generate-name ( helm install  ../template-shiny-deployment --generate-name) ou helm upgrade --install tunaatlas-effort ../template-shiny-deployment -n user-bastiengrassetird
     kubectl get pods
     kubectl describe pod xxxx
     pour savoir ce qui se passe apèr template-shiny-deployment-1765959698
@@ -20,3 +20,8 @@ The example R Shiny App is deployed [here](https://myshinyapp.lab.sspcloud.fr).
 kubectl -n user-bastiengrassetird describe ingress template-shiny-deployment-1765959698
 
 enlver des choses helm uninstall template-shiny-deployment-1765960339 -n user-bastiengrassetird
+
+kubectl get ingress -n user-bastiengrassetird
+kubectl delete ingress template-shiny-deployment-1770371528 -n user-bastiengrassetird
+kubectl delete ingress tunaatlas-effort-shiny -n user-bastiengrassetird
+
