@@ -27,7 +27,8 @@ REL=template-shiny-deployment-1771402299
 NS=user-bastiengrassetird
 
 helm upgrade $REL ../template-shiny-deployment -n $NS \
-  --set-string resources.requests.cpu=200m \
-  --set-string resources.requests.memory=1Gi \
-  --set-string resources.limits.cpu=1 \
-  --set-string resources.limits.memory=2Gi
+  --set-string shiny.resources.requests.cpu=200m \
+  --set-string shiny.resources.requests.memory=1Gi \
+  --set-string shiny.resources.limits.cpu=1 \
+  --set-string shiny.resources.limits.memory=2Gi
+
