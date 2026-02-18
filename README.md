@@ -43,3 +43,13 @@ helm upgrade --install my-shiny . -n user-bastiengrassetird \
   --set-string resources.limits.cpu=1 \
   --set-string resources.limits.memory=2Gi
 
+
+
+# Sur edito 
+
+helm dependency update ../template-shiny-deployment/
+
+REL=effort
+helm upgrade --install "$REL" ../template-shiny-deployment -f values_edito.yaml
+kubectl annotate ingress "${REL}-shiny" kubernetes.io/ingress.class- --overwrite # patch pour edito
+curl -I https://effortgta.lab.dive.edito.eu
