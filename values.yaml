@@ -3,29 +3,23 @@ shiny:
     repository: ghcr.io/firms-gta/dashboardcwpdatasetpreloadeddata
     tag: "latest"
     pullPolicy: Always
-    
+
   ingress:
     enabled: true
-    hostname: dashboardcwpdataset.lab.sspcloud.fr
-
-  resources:
-    requests:
-      cpu: "500m"
-      memory: "2Gi"
-    limits:
-      cpu: "2"
-      memory: "4Gi"
+    hostname: dashboard.lab.dive.edito.eu
 
   startupProbe:
+    enabled: true
     httpGet:
       path: /
       port: http
     initialDelaySeconds: 10
     periodSeconds: 10
     timeoutSeconds: 3
-    failureThreshold: 30
+    failureThreshold: 30   # 5 minutes
 
   readinessProbe:
+    enabled: true
     httpGet:
       path: /
       port: http
@@ -35,6 +29,7 @@ shiny:
     failureThreshold: 6
 
   livenessProbe:
+    enabled: true
     httpGet:
       path: /
       port: http
@@ -43,3 +38,4 @@ shiny:
     timeoutSeconds: 3
     failureThreshold: 3
 
+  resources: {}

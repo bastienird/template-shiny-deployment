@@ -20,3 +20,14 @@ The example R Shiny App is deployed [here](https://myshinyapp.lab.sspcloud.fr).
 kubectl -n user-bastiengrassetird describe ingress template-shiny-deployment-1765959698
 
 enlver des choses helm uninstall template-shiny-deployment-1765960339 -n user-bastiengrassetird
+
+# Edito 
+
+REL=template-shiny-deployment-1771402299
+NS=user-bastiengrassetird
+
+helm upgrade $REL ../template-shiny-deployment -n $NS \
+  --set-string resources.requests.cpu=200m \
+  --set-string resources.requests.memory=1Gi \
+  --set-string resources.limits.cpu=1 \
+  --set-string resources.limits.memory=2Gi
