@@ -1,12 +1,12 @@
 shiny:
   image:
-    repository: ghcr.io/firms-gta/dashboardcwpdatasetpreloadeddata
-    tag: "latest"
+    repository: ghcr.io/bastienird/tunaatlas_pie_map_shiny
+    tag: "effort2026"
     pullPolicy: Always
 
   ingress:
     enabled: true
-    hostname: dashboard.lab.dive.edito.eu
+    hostname: effortgta.lab.dive.edito.eu
 
   startupProbe:
     enabled: true
